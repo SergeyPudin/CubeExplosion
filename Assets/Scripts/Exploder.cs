@@ -54,6 +54,10 @@ public class Exploder : MonoBehaviour
 
     public void Explode()
     {
+        int minQuantity = 2;
+        int maxQuantity = 6;
+        int randomValue = Random.Range(minQuantity, maxQuantity);
+
         _probabilityDividingCubes.IsDevide();
 
         Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
@@ -62,7 +66,7 @@ public class Exploder : MonoBehaviour
         if (_probabilityDividingCubes.IsDeviding)
         {
             SetScale();
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < randomValue; i++)
             {
                 CreateCubes();
             }
