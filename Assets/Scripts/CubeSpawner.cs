@@ -8,9 +8,9 @@ public class CubeSpawner : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.blue;
-
         const float Halving = 0.5f;
+
+        Gizmos.color = Color.blue;
 
         Vector3 corner1 = new Vector3(_spawnAreaCenter.x - _spawnAreaSize.x * Halving, _spawnAreaCenter.y - _spawnAreaSize.y * Halving, _spawnAreaCenter.z - _spawnAreaSize.z * Halving);
         Vector3 corner2 = new Vector3(_spawnAreaCenter.x + _spawnAreaSize.x * Halving, _spawnAreaCenter.y - _spawnAreaSize.y * Halving, _spawnAreaCenter.z - _spawnAreaSize.z * Halving);
