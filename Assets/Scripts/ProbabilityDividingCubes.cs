@@ -19,7 +19,7 @@ public class ProbabilityDividingCubes : MonoBehaviour
     {
         const float Halving = 0.5f;
 
-        _isDeviding = Random.Range(0, MaxProbability) < _probability ? true : false;
+        _isDeviding = Random.Range(0, MaxProbability) < _probability;
 
         _probability *= Halving;
     }
