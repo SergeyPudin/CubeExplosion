@@ -1,16 +1,15 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Exploder))]
+[RequireComponent(typeof(ExplosionHendler))]
 public class PlayerInput : MonoBehaviour
 {
-    [SerializeField] private Collider _wall;
     [SerializeField] private  LayerMask _raycastLayer;
 
-    private Exploder _exploder;
+    private ExplosionHendler _explosionHandler;
 
     private void Start()
     {
-        _exploder = GetComponent<Exploder>();
+        _explosionHandler = GetComponent<ExplosionHendler>();
     }
 
     private void Update()
@@ -23,8 +22,8 @@ public class PlayerInput : MonoBehaviour
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, _raycastLayer))
             {
                 if (hit.collider.gameObject == gameObject)
-                {
-                    _exploder.Explode();
+                {                   
+                    _explosionHandler.Explode();
                 }
             }
         }

@@ -17,6 +17,10 @@ GameObject:
   - component: {fileID: 8392704025390577998}
   - component: {fileID: 4137490168681598410}
   - component: {fileID: 7330688101745686607}
+  - component: {fileID: 4356492613713576790}
+  - component: {fileID: 694509882758626375}
+  - component: {fileID: 1102730330879666708}
+  - component: {fileID: 2316997283463938296}
   m_Layer: 0
   m_Name: Cube 1
   m_TagString: Untagged
@@ -130,18 +134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ea56ca34aa10e468e293286225b069, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _colors:
-  - {r: 0.5188679, g: 0, b: 0, a: 1}
-  - {r: 0.5377358, g: 0.25949782, b: 0.012175134, a: 1}
-  - {r: 0.56388927, g: 0.5660378, b: 0.018155891, a: 1}
-  - {r: 0.0021359494, g: 0.5660378, b: 0.0043472955, a: 1}
-  - {r: 0, g: 0.45098042, b: 0.5, a: 1}
-  - {r: 0.0119615365, g: 0.06865761, b: 0.5283019, a: 1}
-  - {r: 0.38679248, g: 0.00510856, b: 0.38080537, a: 1}
-  _cubePrefab: {fileID: 8392704025390577998}
-  _probabilityDividingCubes: {fileID: 7330688101745686607}
-  _spawnAreaSize: {x: 14, y: 2, z: 14}
-  _spawnAreaCenter: {x: 0, y: 0.5, z: 0}
   _explosionRadius: 14
   _explosionForce: 1000
   _explosionPrefab: {fileID: 19895328, guid: 63b947fb37742414b8991c716c5f8028, type: 3}
@@ -169,7 +161,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad04c7fa63c3e34e89d9972c6991892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wall: {fileID: 0}
   _raycastLayer:
     serializedVersion: 2
     m_Bits: 119
@@ -185,3 +176,65 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 257704e1ada88b24fad964a434940d17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4356492613713576790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8778431575106051577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: befb08486ea38e248867923b6b2977ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _colors:
+  - {r: 0.5188679, g: 0, b: 0, a: 1}
+  - {r: 0.5377358, g: 0.25949782, b: 0.012175134, a: 1}
+  - {r: 0.56388927, g: 0.5660378, b: 0.018155891, a: 1}
+  - {r: 0.0021359494, g: 0.5660378, b: 0.0043472955, a: 1}
+  - {r: 0, g: 0.45098042, b: 0.5, a: 1}
+  - {r: 0.0119615365, g: 0.06865761, b: 0.5283019, a: 1}
+  - {r: 0.38679248, g: 0.00510856, b: 0.38080537, a: 1}
+--- !u!114 &694509882758626375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8778431575106051577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3807c4f9975f0042b549d266a4e79cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cubePrefab: {fileID: 8392704025390577998}
+  _spawnAreaSize: {x: 14, y: 2, z: 14}
+  _spawnAreaCenter: {x: 0, y: 0, z: 0}
+--- !u!114 &1102730330879666708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8778431575106051577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38e88691b99f151449c89046ef8c62bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2316997283463938296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8778431575106051577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ece42a431c23249479cc889847173078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _explosionRadius: 14
+  _explosionForce: 1000
+  _explosionPrefab: {fileID: 19895328, guid: a11dc34cafe3dfd4facb59cfb4e72de8, type: 3}

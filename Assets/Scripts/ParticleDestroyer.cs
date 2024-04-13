@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ParticleDestroyer : MonoBehaviour
 {
-    [SerializeField] private float _lifeTime = 1;
+    [SerializeField] private float _effectLifetime = 1;
 
     private Coroutine _selfDestruct;
 
@@ -14,7 +14,7 @@ public class ParticleDestroyer : MonoBehaviour
 
     private IEnumerator SelfDestruct()
     {
-        WaitForSeconds waitForSeconds = new WaitForSeconds(_lifeTime);
+        WaitForSeconds waitForSeconds = new WaitForSeconds(_effectLifetime);
 
         int numberCycles = 1;
         
