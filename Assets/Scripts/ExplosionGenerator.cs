@@ -9,15 +9,14 @@ public class ExplosionGenerator : MonoBehaviour
 
     private List<Rigidbody> _explosibleCubes = new List<Rigidbody>();
 
-    public void AddExplosibleCube(Rigidbody cube)
+    public void AddNewBorneCube(Rigidbody cube)
     {
         _explosibleCubes.Add(cube);
     }
 
-    public void Explose()
+    public void ExploseNewBornCubes()
     {
         Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
-
         MakeBlastWave();
     }
 
@@ -26,6 +25,22 @@ public class ExplosionGenerator : MonoBehaviour
         foreach (Rigidbody cube in _explosibleCubes)
         {
             cube.AddExplosionForce(_explosionForce, transform.position, _explosionRadius);
+        }
+    }
+
+    public void ExploseAllCubes(float explosionCoefficient)
+    {
+        float explosionForce = _explosionForce * explosionCoefficient;
+        float explosionRadius = _explosionRadius * explosionCoefficient;
+
+        Collider[] hits = Physics.OverlapSphere(transform.position, explosionRadius);
+
+        Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
+
+        foreach (Collider hit in hits)
+        {
+            if (hit.attachedRigidbody)
+                hit.attachedRigidbody.AddExplosionForce(explosionForce, transform.position, explosionRadius);
         }
     }
 }
