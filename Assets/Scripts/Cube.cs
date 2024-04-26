@@ -1,11 +1,24 @@
 using UnityEngine;
 
-public class Cube : MonoBehaviour
+[RequireComponent(typeof(ColorChanger), typeof(SizeChanger))]
+public class Cube : MonoBehaviour 
 {
-    private float _explosionForceCoefficient;
+    private ColorChanger _colorChanger;
+    private SizeChanger _sizeChanger;
 
-    public void SetCoeffisient(float explosionCoefficient)
+    private void Awake()
     {
-        _explosionForceCoefficient = explosionCoefficient;
+        _colorChanger = GetComponent<ColorChanger>();
+        _sizeChanger = GetComponent<SizeChanger>();
+    }
+
+    public void GetSize()
+    {
+        _sizeChanger.ChangeSize();
+    }
+
+    public void GetColor()
+    {
+        _colorChanger.ChangeColor();
     }
 }

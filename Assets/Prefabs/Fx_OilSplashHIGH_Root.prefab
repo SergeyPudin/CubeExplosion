@@ -19262,6 +19262,7 @@ GameObject:
   - component: {fileID: 462184}
   - component: {fileID: 19895328}
   - component: {fileID: 19975156}
+  - component: {fileID: -184378906191134888}
   m_Layer: 0
   m_Name: Fx_OilSplashHIGH_Root
   m_TagString: Untagged
@@ -24084,6 +24085,19 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &-184378906191134888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9241c72681ac0ba4e808b848d865e38a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _effectLifetime: 1
 --- !u!1 &171686
 GameObject:
   m_ObjectHideFlags: 0

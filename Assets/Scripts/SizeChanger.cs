@@ -2,24 +2,19 @@ using UnityEngine;
 
 public class SizeChanger : MonoBehaviour
 {
-    private float _scaleValue;
-
-    private void Awake()
+    public void ChangeSize()
     {
-        _scaleValue = transform.localScale.x;
+        float initialScale = transform.localScale.x;
+
+        DecreaseSizeValue(ref initialScale);
+
+        transform.localScale = Vector3.one * initialScale;
     }
 
-    public void DecreaseSize()
+    private void DecreaseSizeValue(ref float scaleValue)
     {
-        ChangeScaleValue();
+        float halving = 0.5f;
 
-        transform.localScale = new Vector3(_scaleValue, _scaleValue, _scaleValue);
-    }
-
-    private void ChangeScaleValue()
-    {
-        const float Halving = 0.5f;
-
-        _scaleValue *= Halving;
+        scaleValue *= halving;
     }
 }

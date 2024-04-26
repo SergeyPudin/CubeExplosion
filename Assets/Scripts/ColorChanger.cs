@@ -5,17 +5,20 @@ public class ColorChanger : MonoBehaviour
 {
     [SerializeField] private Color[] _colors;
 
-    private Material _material;
-
-    private void Awake()
+    public void ChangeColor()
     {      
-        _material = GetComponent<Renderer>().material;
+        Material material = GetComponent<Renderer>().material;
+        Color initialColor = material.color;
+
+        RandomizeColor(ref initialColor);
+
+        material.color = initialColor;
     }
     
-    public void ChangeColor()
+    private void RandomizeColor(ref Color color)
     {
         int random = Random.Range(0, _colors.Length);
 
-        _material.color = _colors[random];
+        color = _colors[random];
     }
 }

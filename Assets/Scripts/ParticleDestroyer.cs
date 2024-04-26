@@ -16,14 +16,9 @@ public class ParticleDestroyer : MonoBehaviour
     {
         WaitForSeconds waitForSeconds = new WaitForSeconds(_effectLifetime);
 
-        int numberCycles = 1;
-        
-        for (int i = 0; i < numberCycles; i--) 
-        {
-            yield return waitForSeconds;
-           
-            _selfDestruct = null;
-            Destroy(gameObject);
-        }
+        yield return waitForSeconds;
+
+        _selfDestruct = null;
+        Destroy(gameObject);
     }
 }

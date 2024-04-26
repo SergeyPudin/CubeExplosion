@@ -1,7 +1,6 @@
 using UnityEngine;
 
-[RequireComponent(typeof(ColorChanger), typeof(ExplosionGenerator), typeof(ProbabilityDividingCubes))]
-[RequireComponent(typeof(CubeSpawner), typeof(SizeChanger))]
+[RequireComponent(typeof(ExplosionGenerator), typeof(ProbabilityDividingCubes), typeof(CubeSpawner))]
 public class ExplosionHendler : MonoBehaviour
 {
     private CubeSpawner _cubeSpawner;
@@ -62,10 +61,9 @@ public class ExplosionHendler : MonoBehaviour
         Cube cube = _cubeSpawner.SpawnCube();
         ExplosionHendler hendler = cube.GetComponent<ExplosionHendler>();
 
-        cube.GetComponent<ColorChanger>().ChangeColor();
-        cube.GetComponent<SizeChanger>().DecreaseSize();
+        cube.GetColor();
+        cube.GetSize();
 
-        cube.SetCoeffisient(exploderCoefficient);
         hendler.SetExplosionForce(exploderCoefficient);
 
         hendler.UpdateProbability(_probabilityDividingCubes);

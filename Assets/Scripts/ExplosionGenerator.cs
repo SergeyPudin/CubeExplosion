@@ -29,6 +29,8 @@ public class ExplosionGenerator : MonoBehaviour
         float explosionForce = _explosionForce * explosionCoefficient;
         float explosionRadius = _explosionRadius * explosionCoefficient;
 
+        Debug.Log(explosionForce);
+
         Collider[] hits = Physics.OverlapSphere(transform.position, explosionRadius);
 
         Instantiate(_explosionPrefab, transform.position, Quaternion.identity);

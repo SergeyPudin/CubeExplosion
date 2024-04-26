@@ -43,16 +43,16 @@ public class CubeSpawner : MonoBehaviour
 
     private Vector3 RandomSpawnPosition()
     {
-        const float Halving = 0.5f;
+        float halving = 0.5f;
 
         float minValue = 0.5f;
         float maxValue = 1.0f;  
 
         Vector3 randomPosition;
 
-        float randomX = Random.Range(_spawnAreaCenter.x - _spawnAreaSize.x * Halving, _spawnAreaCenter.x + _spawnAreaSize.x * Halving);
-        float randomY = Mathf.Clamp(Random.Range(_spawnAreaCenter.y - _spawnAreaSize.y * Halving, _spawnAreaCenter.y + _spawnAreaSize.y * Halving), minValue, maxValue);
-        float randomZ = Random.Range(_spawnAreaCenter.z - _spawnAreaSize.z * Halving, _spawnAreaCenter.z + _spawnAreaSize.z * Halving);
+        float randomX = Random.Range(_spawnAreaCenter.x - _spawnAreaSize.x * halving, _spawnAreaCenter.x + _spawnAreaSize.x * halving);
+        float randomY = Mathf.Clamp(Random.Range(_spawnAreaCenter.y - _spawnAreaSize.y * halving, _spawnAreaCenter.y + _spawnAreaSize.y * halving), minValue, maxValue);
+        float randomZ = Random.Range(_spawnAreaCenter.z - _spawnAreaSize.z * halving, _spawnAreaCenter.z + _spawnAreaSize.z * halving);
 
         randomPosition = new Vector3(randomX, randomY, randomZ);
 
