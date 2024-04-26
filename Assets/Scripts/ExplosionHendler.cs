@@ -41,7 +41,7 @@ public class ExplosionHendler : MonoBehaviour
         }
         else
         {
-            _explosionGenerator.ExploseAllCubes(_explosionForceCoefficient);
+            _explosionGenerator.ExplodeAllCubes(_explosionForceCoefficient);
         }
 
         Destroy(gameObject);

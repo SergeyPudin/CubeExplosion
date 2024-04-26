@@ -17,18 +17,14 @@ public class ExplosionGenerator : MonoBehaviour
     public void ExploseNewBornCubes()
     {
         Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
-        MakeBlastWave();
-    }
 
-    public void MakeBlastWave()
-    {
         foreach (Rigidbody cube in _explosibleCubes)
         {
             cube.AddExplosionForce(_explosionForce, transform.position, _explosionRadius);
         }
     }
 
-    public void ExploseAllCubes(float explosionCoefficient)
+    public void ExplodeAllCubes(float explosionCoefficient)
     {
         float explosionForce = _explosionForce * explosionCoefficient;
         float explosionRadius = _explosionRadius * explosionCoefficient;
