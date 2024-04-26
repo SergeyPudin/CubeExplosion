@@ -1,11 +1,11 @@
 using UnityEngine;
 
-[RequireComponent(typeof(ExplosionGenerator), typeof(ProbabilityDividingCubes), typeof(CubeSpawner))]
+[RequireComponent(typeof(ExplosionGenerator), typeof(ProbabilityCalculator), typeof(CubeSpawner))]
 public class ExplosionHendler : MonoBehaviour
 {
     private CubeSpawner _cubeSpawner;
     private ExplosionGenerator _explosionGenerator;
-    private ProbabilityDividingCubes _probabilityDividingCubes;
+    private ProbabilityCalculator _probabilityDividingCubes;
 
     private float _explosionForceCoefficient;
 
@@ -14,7 +14,7 @@ public class ExplosionHendler : MonoBehaviour
         _cubeSpawner = GetComponent<CubeSpawner>();
         _explosionGenerator = GetComponent<ExplosionGenerator>();
 
-        _probabilityDividingCubes = GetComponent<ProbabilityDividingCubes>();
+        _probabilityDividingCubes = GetComponent<ProbabilityCalculator>();
     }
 
     public void Explode()
@@ -46,7 +46,7 @@ public class ExplosionHendler : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void UpdateProbability(ProbabilityDividingCubes probability)
+    public void UpdateProbability(ProbabilityCalculator probability)
     {
         _probabilityDividingCubes = probability;
     }
@@ -67,7 +67,7 @@ public class ExplosionHendler : MonoBehaviour
         hendler.SetExplosionForce(exploderCoefficient);
 
         hendler.UpdateProbability(_probabilityDividingCubes);
-        cube.GetComponent<ProbabilityDividingCubes>().SetProbability(_probabilityDividingCubes.Probability);
+        cube.GetComponent<ProbabilityCalculator>().SetProbability(_probabilityDividingCubes.Probability);
 
         if (cube.TryGetComponent<Collider>(out Collider collider))
         {
